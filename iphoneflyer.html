@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-Friendly Resume Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px; /* Optimal width for mobile devices */
+        }
+        label, textarea, input, button {
+            margin: 10px 0;
+        }
+        textarea, input {
+            resize: vertical; /* Allows vertical resizing, better for mobile */
+        }
+        input[type=submit] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Project Atlas</h1>
+    <form id="resumeForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="resumeFile">Upload your resume:</label>
+        <input type="file" id="resumeFile" name="resumeFile" required><br>
+        <label for="extraText">Enter additional information:</label>
+        <textarea id="extraText" name="extraText" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
